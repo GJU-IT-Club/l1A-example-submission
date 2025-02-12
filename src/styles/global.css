@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+    --color-butter: oklch(89.85% 0.1513 93.66);
+    --color-gravy: oklch(35.12% 0.0447 65.49);
+    --color-spud-flesh: oklch(97.73% 0.0373 95.44);
+    --color-spud-skin: oklch(67.82% 0.1227 62.18);
+    --color-spud-sprout: oklch(74.19% 0.2286 142.83);
+    --color-spud-dirt: oklch(47.08% 0.1121 50.85);
+    --font-messiri: "El Messiri", "sans-serif";
+}
+
+
+@layer base{
+
+}
+
+@layer components{
+    .action-btn{
+        @apply bg-butter font-semibold text-xl px-5 py-3 border-2 border-b-4 border-r-4 rounded-lg border-gravy transition-all duration-150 ;
+    }
+    .action-btn:hover{
+        @apply hover:border-b-8 hover:border-r-8 transform;  
+    }
+
+}

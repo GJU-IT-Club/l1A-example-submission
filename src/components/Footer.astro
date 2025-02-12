@@ -1,0 +1,40 @@
+---
+import IT from "@/assets/it.svg";
+import Github from "@/assets/github.svg";
+
+import {Image} from "astro:assets";
+const logos =[
+  {
+    name: "IT Club",
+    src: IT,
+    link: "https://it.gju.app"
+  },
+  {
+    name: "Github",
+    src: Github,
+    link: "https://github.com/GJU-IT-Club"
+  }
+ 
+];
+
+const date = new Date().getFullYear();
+---
+
+
+
+<footer class="flex flex-row justify-center items-center container mx-auto text-center gap-5">
+    
+        &copy; {date} der Kartoffel. All rights reserved 🥔
+    
+    <div class="flex items-center text-5xl">
+        {
+        logos.map((logo) => {
+            <a href={logo.link} target="_blank">
+                <picture>
+                    <Image src={Github} alt={logo.name} width={50}/>
+                </picture>
+            </a>
+        })
+        }
+    </div>
+</footer>
