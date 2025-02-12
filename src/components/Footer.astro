@@ -2,39 +2,43 @@
 import IT from "@/assets/it.svg";
 import Github from "@/assets/github.svg";
 
-import {Image} from "astro:assets";
-const logos =[
+import { Image } from "astro:assets";
+const logos = [
   {
     name: "IT Club",
     src: IT,
-    link: "https://it.gju.app"
+    link: "https://it.gju.app",
   },
   {
     name: "Github",
     src: Github,
-    link: "https://github.com/GJU-IT-Club"
-  }
- 
+    link: "https://github.com/GJU-IT-Club/l1A-example-submission",
+  },
 ];
 
 const date = new Date().getFullYear();
 ---
 
-
-
-<footer class="flex flex-row justify-center items-center container mx-auto text-center gap-5">
-    
-        &copy; {date} der Kartoffel. All rights reserved 🥔
-    
-    <div class="flex items-center text-5xl">
-        {
-        logos.map((logo) => {
-            <a href={logo.link} target="_blank">
-                <picture>
-                    <Image src={Github} alt={logo.name} width={50}/>
-                </picture>
-            </a>
-        })
-        }
-    </div>
+<footer
+  class="flex flex-col-reverse md:flex-row justify-between items-center container mx-auto text-center px-10"
+>
+  <div class="text-auto sm:text-lg">
+    &copy; {date} der Kartoffel. All rights reserved 🥔
+  </div>
+  <div class="flex flex-row items-center text-5xl space-x-4">
+    {
+      logos.map((logo) => (
+        <a href={logo.link} target="_blank">
+          <picture>
+            <Image
+              src={logo.src}
+              alt={logo.name}
+              width={36}
+              class={"text-gravy"}
+            />
+          </picture>
+        </a>
+      ))
+    }
+  </div>
 </footer>
